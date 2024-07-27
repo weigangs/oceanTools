@@ -1,0 +1,54 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.swg1024.oceantools</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Oceantools</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="swg1024@gmail.com" url="">YourCompany</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+    <resource-bundle>messages.BasicActionsBundle</resource-bundle>
+    <actions>
+        <group
+                id="com.lkyl.oceantools.actions.CustomDefaultActionGroup"
+                class="com.lkyl.oceantools.actions.CustomDefaultActionGroup"
+                popup="true">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <action id="org.intellij.sdk.action.CustomGroupedAction" class="com.lkyl.oceantools.actions.PopupDialogAction"
+                    />
+        </group>
+        <!--<action id="com.lkyl.oceantools.actions.PopupDialogAction" class="com.lkyl.oceantools.actions.PopupDialogAction"
+                text="Pop Dialog Action" description="SDK action example">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <override-text place="MainMenu" text="Popup Dialog Action"/>
+            <keyboard-shortcut
+                    keymap="$default"
+                    first-keystroke="control alt A"
+                    second-keystroke="C"/>
+            <mouse-shortcut
+                    keymap="$default"
+                    keystroke="control button3 doubleClick"/>
+        </action>-->
+
+    </actions>
+</idea-plugin>
